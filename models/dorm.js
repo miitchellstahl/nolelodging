@@ -9,6 +9,11 @@ const DormSchema = new mongoose.Schema({
   link: String,
   review: Number,
   overallRating: Number,
+  averageLocation: Number,
+  averageSize: Number,
+  averageSocial: Number,
+  averageNoise: Number,
+  averageProximity: Number,
 
   image: [
     {

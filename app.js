@@ -168,7 +168,8 @@ app.post("/:id/add-review", async (req, res) => {
   const dorm = await Dorm.findById(req.params.id);
   //   res.render("dorms/add-review", { dorm });
   let { grade, location, size, social, proximity, noise, message } = req.body;
-  //   dorm.review += 1;
+
+  dorm.review += 1;
   let reviewNum = 0;
   //   reviewNum = dorm.review + 1;
   reviewNum = 1;
@@ -182,54 +183,44 @@ app.post("/:id/add-review", async (req, res) => {
     message,
   });
 
+  location = parseInt(location);
+  size = parseInt(size);
+  social = parseInt(social);
+  proximity = parseInt(proximity);
+  noise = parseInt(noise);
+
+  dorm.averageLocation += location;
+  dorm.averageSize += size;
+  dorm.averageSocial += social;
+  dorm.averageNoise += noise;
+  dorm.averageProximity += proximity;
+
   await dorm.save();
 
-  if (review == 0) {
-    console.log("sdjfn");
-  } else {
-    location = parseInt(location);
-    size = parseInt(size);
-    social = parseInt(social);
-    proximity = parseInt(proximity);
-    noise = parseInt(noise);
+  //   averageLocation = averageLocation;
+  //   averageSize = averageSize;
+  //   averageSocial = averageSocial;
+  //   averageNoise = averageNoise;
+  //   averageProximity = averageProximity;
 
-    console.log(typeof location);
+  // averageLocationDivide /= review;
+  // averageSizeDivide /= review;
+  // averageSocialDivide /= review;
+  // averageNoiseDivide /= review;
+  // averageProximityDivide /= review;
+  overallRating = parseFloat(
+    (
+      (dorm.averageLocation / review +
+        dorm.averageSize / review +
+        dorm.averageSocial / review +
+        dorm.averageNoise / review +
+        dorm.averageProximity / review) /
+      5
+    ).toFixed(1)
+  );
 
-    averageLocation += location;
-    averageSize += size;
-    averageSocial += social;
-    averageNoise += noise;
-    averageProximity += proximity;
-
-    console.log(averageLocation);
-
-    // averageLocation = averageLocation;
-    // averageSize = averageSize;
-    // averageSocial = averageSocial;
-    // averageNoise = averageNoise;
-    // averageProximity = averageProximity;
-
-    // averageLocationDivide /= review;
-    // averageSizeDivide /= review;
-    // averageSocialDivide /= review;
-    // averageNoiseDivide /= review;
-    // averageProximityDivide /= review;
-    overallRating = parseFloat(
-      (
-        (averageLocation / review +
-          averageSize / review +
-          averageSocial / review +
-          averageNoise / review +
-          averageProximity / review) /
-        5
-      ).toFixed(1)
-    );
-
-    console.log(overallRating);
-
-    dorm.overallRating = overallRating;
-    await dorm.save();
-  }
+  dorm.overallRating = overallRating;
+  await dorm.save();
 
   res.redirect(`/${dorm._id}`);
 });
