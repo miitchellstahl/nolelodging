@@ -1,9 +1,12 @@
 const express = require("express");
-const { mongoose } = require("mongoose");
+const mongoose = require("mongoose");
+require("dotenv").config({ path: "../config.env" });
 const dormList = require("./dormInfoArray");
 const Dorm = require("../models/dorm");
 
-mongoose.connect("mongodb://localhost:27017/nole-lodging", {
+const MONGOURI = process.env.MONGO_URI;
+
+mongoose.connect(MONGOURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
