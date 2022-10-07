@@ -168,7 +168,9 @@ app.post("/:id/add-review", async (req, res) => {
   const dorm = await Dorm.findById(req.params.id);
   //   res.render("dorms/add-review", { dorm });
   let { grade, location, size, social, proximity, noise, message } = req.body;
-  review += 1;
+  dorm.review += 1;
+  let reviewNum = 0;
+  reviewNum = dorm.review + 1;
   dorm.reviews.push({
     grade,
     location,
@@ -192,11 +194,11 @@ app.post("/:id/add-review", async (req, res) => {
 
     console.log(typeof location);
 
-    averageLocation += location;
-    averageSize += size;
-    averageSocial += social;
-    averageNoise += noise;
-    averageProximity += proximity;
+    // averageLocation += location;
+    // averageSize += size;
+    // averageSocial += social;
+    // averageNoise += noise;
+    // averageProximity += proximity;
 
     console.log(averageLocation);
 
@@ -213,18 +215,17 @@ app.post("/:id/add-review", async (req, res) => {
     // averageProximityDivide /= review;
     overallRating = parseFloat(
       (
-        (averageLocation / review +
-          averageSize / review +
-          averageSocial / review +
-          averageNoise / review +
-          averageProximity / review) /
+        (averageLocation / reviewNum +
+          averageSize / reviewNum +
+          averageSocial / reviewNum +
+          averageNoise / reviewNum +
+          averageProximity / reviewNum) /
         5
       ).toFixed(1)
     );
 
     console.log(overallRating);
 
-    dorm.review = review;
     dorm.overallRating = overallRating;
     await dorm.save();
   }
