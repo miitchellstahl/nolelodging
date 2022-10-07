@@ -197,17 +197,6 @@ app.post("/:id/add-review", async (req, res) => {
 
   await dorm.save();
 
-  //   averageLocation = averageLocation;
-  //   averageSize = averageSize;
-  //   averageSocial = averageSocial;
-  //   averageNoise = averageNoise;
-  //   averageProximity = averageProximity;
-
-  // averageLocationDivide /= review;
-  // averageSizeDivide /= review;
-  // averageSocialDivide /= review;
-  // averageNoiseDivide /= review;
-  // averageProximityDivide /= review;
   overallRating = parseFloat(
     (
       (dorm.averageLocation / dorm.review +
