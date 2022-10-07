@@ -171,6 +171,7 @@ app.post("/:id/add-review", async (req, res) => {
   dorm.review += 1;
   let reviewNum = 0;
   reviewNum = dorm.review + 1;
+  console.log("REVIEWNUM " + reviewNum);
   dorm.reviews.push({
     grade,
     location,
