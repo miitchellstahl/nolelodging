@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" href="/dorms/assets/favicon.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dorms/main.css" />
+    <link rel="stylesheet" href="/dorms/rating.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <title>NoleLodging | <%=dorm.name%> | Add Review</title>
+  </head>
+  <body>
+    <nav class="navbar" style="background-color: #782f40">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/dorms/assets/icon.png" width="64" height="64" />
+        </a>
+        <form class="d-flex" action="/results" method="POST">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search Dorms"
+            aria-label="Search"
+            name="name"
+          />
+          <button class="btn btn-gold" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="mt-5 container text-center">
+      <h2>Add Review for <%=dorm.name %></h2>
+      <form action="/<%=dorm._id%>/add-review" method="POST">
+        <div
+          class="form-group d-flex align-items-center justify-content-center"
+        >
+          <input
+            type="radio"
+            class="btn-check"
+            name="grade"
+            value="Freshman"
+            id="option1"
+            autocomplete="off"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+          <label class="btn btn-secondary p-2 m-2" for="option1"
+            >Freshman</label
+          >
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="grade"
+            value="Sophomore"
+            id="option2"
+            autocomplete="off"
+            required
+          />
+          <label class="btn btn-secondary p-2 m-2" for="option2"
+            >Sophomore</label
+          >
+
+          <input
+            type="radio"
+            class="btn-check"
+            name="grade"
+            value="Junior"
+            id="option3"
+            autocomplete="off"
+            required
+          />
+          <label class="btn btn-secondary p-2 m-2" for="option3">Junior</label>
+          <input
+            type="radio"
+            class="btn-check"
+            name="grade"
+            value="Senior"
+            id="option4"
+            autocomplete="off"
+            required
+          />
+          <label class="btn btn-secondary p-2 m-2" for="option4">Senior</label>
+        </div>
+
+        <div
+          class="form-group d-flex align-items-center justify-content-center"
+        >
+          <label for="exampleFormControlInput1" class="h2 p-2">Location</label>
+          <div class="rating">
+            <input
+              type="radio"
+              name="location"
+              value="5"
+              id="5location"
+              required
+            /><label for="5location">☆</label>
+            <input
+              type="radio"
+              name="location"
+              value="4"
+              id="4"
+              required
+            /><label for="4location">☆</label>
+            <input
+              type="radio"
+              name="location"
+              value="3"
+              id="3location"
+              required
+            /><label for="3location">☆</label>
+            <input
+              type="radio"
+              name="location"
+              value="2"
+              id="2location"
+              required
+            /><label for="2location">☆</label>
+            <input
+              type="radio"
+              name="location"
+              value="1"
+              id="1location"
+              required
+            /><label for="1location">☆</label>
+          </div>
+        </div>
+        <div
+          class="form-group d-flex align-items-center justify-content-center"
+        >
+          <label for="exampleFormControlInput1" class="h2 p-2">Size</label>
+          <div class="rating">
+            <input
+              type="radio"
+              name="size"
+              value="5"
+              id="5size"
+              required
+            /><label for="5size">☆</label>
+            <input
+              type="radio"
+              name="size"
+              value="4"
+              id="4size"
+              required
+            /><label for="4size">☆</label>
+            <input
+              type="radio"
+              name="size"
+              value="3"
+              id="3size"
+              required
+            /><label for="3size">☆</label>
+            <input
+              type="radio"
+              name="size"
+              value="2"
+              id="2size"
+              required
+            /><label for="2size">☆</label>
+            <input
+              type="radio"
+              name="size"
+              value="1"
+              id="1size"
+              required
+            /><label for="1size">☆</label>
+          </div>
+        </div>
+        <div
+          class="form-group d-flex align-items-center justify-content-center"
+        >
+          <label for="exampleFormControlInput1" class="h2 p-2"
+            >Social Life</label
+          >
+          <div class="rating">
+            <input
+              type="radio"
+              name="social"
+              value="5"
+              id="5social"
+              required
+            /><label for="5social">☆</label>
+            <input
+              type="radio"
+              name="social"
+              value="4"
+              id="4social"
+              required
+            /><label for="4social">☆</label>
+            <input
+              type="radio"
+              name="social"
+              value="3"
+              id="3social"
+              required
+            /><label for="3social">☆</label>
+            <input
+              type="radio"
+              name="social"
+              value="2"
+              id="2social"
+              required
+            /><label for="2social">☆</label>
+            <input
+              type="radio"
+              name="social"
+              value="1"
+              id="1social"
+              required
+            /><label for="1social">☆</label>
+          </div>
+        </div>
+        <div
+          class="form-group d-flex align-items-center justify-content-center"
+        >
+          <label for="exampleFormControlInput1" class="h2 p-2"
+            >Noise Level</label
+          >
+          <div class="rating">
+            <input
+              type="radio"
+              name="noise"
+              value="5"
+              id="5noise"
+              required
+            /><label for="5noise">☆</label>
+            <input
+              type="radio"
+              name="noise"
+              value="4"
+              id="4noise"
+              required
+            /><label for="4noise">☆</label>
+            <input
+              type="radio"
+              name="noise"
+              value="3"
+              id="3noise"
+              required
+            /><label for="3noise">☆</label>
+            <input
+              type="radio"
+              name="noise"
+              value="2"
+              id="2noise"
+              required
+            /><label for="2noise">☆</label>
+            <input
+              type="radio"
+              name="noise"
+              value="1"
+              id="1noise"
+              required
+            /><label for="1noise">☆</label>
+          </div>
+        </div>
+        <div
+          class="form-group d-flex align-items-center justify-content-center"
+        >
+          <label for="exampleFormControlInput1" class="h2 p-2"
+            >Proximity to Class</label
+          >
+          <div class="rating">
+            <input
+              type="radio"
+              name="proximity"
+              value="5"
+              id="5proximity"
+              required
+            /><label for="5proximity">☆</label>
+            <input
+              type="radio"
+              name="proximity"
+              value="4"
+              id="4proximity"
+              required
+            /><label for="4proximity">☆</label>
+            <input
+              type="radio"
+              name="proximity"
+              value="3"
+              id="3proximity"
+              required
+            /><label for="3proximity">☆</label>
+            <input
+              type="radio"
+              name="proximity"
+              value="2"
+              id="2proximity"
+              required
+            /><label for="2proximity">☆</label>
+            <input
+              type="radio"
+              name="proximity"
+              value="1"
+              id="1proximity"
+              required
+            /><label for="1proximity">☆</label>
+          </div>
+        </div>
+        <div
+          class="form-group d-flex align-items-center justify-content-center flex-column mb-5"
+        >
+          <label for="exampleFormControlTextarea1" class="form-label h2 p-2"
+            >Written Review</label
+          >
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            placeholder="Tell us about your <%=dorm.name%> experience"
+            name="message"
+            value="textarea"
+            required
+          ></textarea>
+        </div>
+
+        <div class="submitbutton container mb-5">
+          <button class="btn btn-gold">Submit</button>
+        </div>
+      </form>
+    </div>
+    <footer class="bg-light text-center text-lg-start">
+      <div
+        class="p-3 text-light d-flex justify-content-between align-items-center"
+        style="background-color: #782f40"
+      >
+        <div class="left-footer">
+          ©
+          <a class="text-light" href="https://nolelodging.com/"
+            >nolelodging.com</a
+          >
+        </div>
+        <div class="middle-footer">
+          <a href="https://www.sixfigurelabs.com">
+            <img
+              src="./dorms/assets/LogoWhite.svg"
+              alt=""
+              height="50"
+              width="auto"
+            />
+          </a>
+        </div>
+        <a class="text-light" href="/privacy">Privacy Policy</a>
+      </div>
+    </footer>
+  </body>
+</html>

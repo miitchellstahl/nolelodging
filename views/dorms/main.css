@@ -1,0 +1,165 @@
+* {
+  font-family: "Lato", sans-serif;
+}
+
+shadow {
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
+    0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
+    0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
+    0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035),
+    0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
+    0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+}
+
+h1 {
+  font-weight: 900;
+}
+h2 {
+  font-weight: 700;
+}
+
+.btn-gold {
+  color: #ffffff;
+  background-color: #ceb888;
+  border-color: #ceb888;
+}
+
+.btn-gold:hover,
+.btn-gold:focus,
+.btn-gold:active,
+.btn-gold.active,
+.open .dropdown-toggle.btn-gold {
+  color: #ffffff;
+  background-color: #782f40;
+  border-color: #ceb888;
+}
+
+.btn-gold:active,
+.btn-gold.active,
+.open .dropdown-toggle.btn-gold {
+  background-image: none;
+}
+
+.btn-gold.disabled,
+.btn-gold[disabled],
+fieldset[disabled] .btn-gold,
+.btn-gold.disabled:hover,
+.btn-gold[disabled]:hover,
+fieldset[disabled] .btn-gold:hover,
+.btn-gold.disabled:focus,
+.btn-gold[disabled]:focus,
+fieldset[disabled] .btn-gold:focus,
+.btn-gold.disabled:active,
+.btn-gold[disabled]:active,
+fieldset[disabled] .btn-gold:active,
+.btn-gold.disabled.active,
+.btn-gold[disabled].active,
+fieldset[disabled] .btn-gold.active {
+  background-color: #ceb888;
+  border-color: #ceb888;
+}
+
+.btn-gold .badge {
+  color: #ceb888;
+  background-color: #ffffff;
+}
+
+.btn-purple {
+  color: #ffffff;
+  background-color: #ae77db;
+  border-color: #ae77db;
+}
+
+.btn-purple:hover,
+.btn-purple:focus,
+.btn-purple:active,
+.btn-purple.active,
+.open .dropdown-toggle.btn-purple {
+  color: #ffffff;
+  background-color: #ebbb74;
+  border-color: #ae77db;
+}
+
+.btn-purple:active,
+.btn-purple.active,
+.open .dropdown-toggle.btn-purple {
+  background-image: none;
+}
+
+.btn-purple.disabled,
+.btn-purple[disabled],
+fieldset[disabled] .btn-purple,
+.btn-purple.disabled:hover,
+.btn-purple[disabled]:hover,
+fieldset[disabled] .btn-purple:hover,
+.btn-purple.disabled:focus,
+.btn-purple[disabled]:focus,
+fieldset[disabled] .btn-purple:focus,
+.btn-purple.disabled:active,
+.btn-purple[disabled]:active,
+fieldset[disabled] .btn-purple:active,
+.btn-purple.disabled.active,
+.btn-purple[disabled].active,
+fieldset[disabled] .btn-purple.active {
+  background-color: #ae77db;
+  border-color: #ae77db;
+}
+
+.btn-purple .badge {
+  color: #ae77db;
+  background-color: #ffffff;
+}
+
+#heading-1 {
+  color: #ceb888;
+}
+
+#Freshman {
+  background-color: #782f40 !important;
+}
+#Sophomore {
+  background-color: #ceb888 !important;
+}
+#Junior {
+  background-color: #ae77db !important;
+}
+#Senior {
+  background-color: #6495ed !important;
+}
+
+.carousel-item img {
+  /* width: 70%;
+  height: auto; */
+  border-radius: 20px;
+}
+
+#carouselExampleIndicators {
+  width: 80%;
+  height: auto;
+
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 770px) {
+  .list-group {
+    flex-direction: column !important;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 532px) {
+  #about-button {
+    margin-top: 5px;
+  }
+}
+@media only screen and (max-width: 385px) {
+  .navbar-brand img {
+    height: 56px;
+    width: auto;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .navbar-brand img {
+    height: 40px;
+    width: auto;
+  }
+}
