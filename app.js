@@ -2,7 +2,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-require("dotenv").config({ path: "/config.env" });
+
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config({ path: "/config.env" });
+}
 const methodOverride = require("method-override");
 const Dorm = require("./models/dorm");
 const dormInfoArray = require("./seeds/dormInfoArray");
