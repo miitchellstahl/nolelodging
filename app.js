@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 require("dotenv").config({ path: "/config.env" });
 const methodOverride = require("method-override");
-const Dorm = require("/models/dorm");
+const Dorm = require("./models/dorm");
 const dormInfoArray = require("./seeds/dormInfoArray");
 const catchAsync = require("/utils/catchAsync");
 const ExpressError = require("/utils/ExpressError");
