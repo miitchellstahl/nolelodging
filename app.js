@@ -210,11 +210,11 @@ app.post("/:id/add-review", async (req, res) => {
   // averageProximityDivide /= review;
   overallRating = parseFloat(
     (
-      (dorm.averageLocation / review +
-        dorm.averageSize / review +
-        dorm.averageSocial / review +
-        dorm.averageNoise / review +
-        dorm.averageProximity / review) /
+      (dorm.averageLocation / dorm.review +
+        dorm.averageSize / dorm.review +
+        dorm.averageSocial / dorm.review +
+        dorm.averageNoise / dorm.review +
+        dorm.averageProximity / dorm.review) /
       5
     ).toFixed(1)
   );
