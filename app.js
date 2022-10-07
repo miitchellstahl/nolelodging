@@ -168,10 +168,10 @@ app.post("/:id/add-review", async (req, res) => {
   const dorm = await Dorm.findById(req.params.id);
   //   res.render("dorms/add-review", { dorm });
   let { grade, location, size, social, proximity, noise, message } = req.body;
-  dorm.review += 1;
+  //   dorm.review += 1;
   let reviewNum = 0;
-  reviewNum = dorm.review + 1;
-  //   reviewNum = 1;
+  //   reviewNum = dorm.review + 1;
+  reviewNum = 1;
   dorm.reviews.push({
     grade,
     location,
