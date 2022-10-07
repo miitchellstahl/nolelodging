@@ -168,10 +168,10 @@ app.post("/:id/add-review", async (req, res) => {
   const dorm = await Dorm.findById(req.params.id);
   //   res.render("dorms/add-review", { dorm });
   let { grade, location, size, social, proximity, noise, message } = req.body;
-  //   dorm.review += 1;
+  dorm.review += 1;
   let reviewNum = 0;
-  //   reviewNum = dorm.review + 1;
-  reviewNum = 1;
+  reviewNum = dorm.review + 1;
+  //   reviewNum = 1;
   dorm.reviews.push({
     grade,
     location,
@@ -195,19 +195,19 @@ app.post("/:id/add-review", async (req, res) => {
 
     console.log(typeof location);
 
-    // averageLocation += location;
-    // averageSize += size;
-    // averageSocial += social;
-    // averageNoise += noise;
-    // averageProximity += proximity;
+    averageLocation += location;
+    averageSize += size;
+    averageSocial += social;
+    averageNoise += noise;
+    averageProximity += proximity;
 
     console.log(averageLocation);
 
-    averageLocation = averageLocation;
-    averageSize = averageSize;
-    averageSocial = averageSocial;
-    averageNoise = averageNoise;
-    averageProximity = averageProximity;
+    // averageLocation = averageLocation;
+    // averageSize = averageSize;
+    // averageSocial = averageSocial;
+    // averageNoise = averageNoise;
+    // averageProximity = averageProximity;
 
     // averageLocationDivide /= review;
     // averageSizeDivide /= review;
