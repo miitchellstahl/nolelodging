@@ -6,8 +6,8 @@ require("dotenv").config({ path: "/config.env" });
 const methodOverride = require("method-override");
 const Dorm = require("./models/dorm");
 const dormInfoArray = require("./seeds/dormInfoArray");
-const catchAsync = require("/utils/catchAsync");
-const ExpressError = require("/utils/ExpressError");
+const catchAsync = require("./utils/catchAsync");
+const ExpressError = require("./utils/ExpressError");
 
 //Connect to database
 const MONGOURI = process.env.MONGO_URI;
