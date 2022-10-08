@@ -143,7 +143,6 @@ fieldset[disabled] .btn-purple.active {
 @media only screen and (max-width: 770px) {
   .list-group {
     flex-direction: column !important;
-    align-items: center;
   }
 }
 @media only screen and (max-width: 532px) {
