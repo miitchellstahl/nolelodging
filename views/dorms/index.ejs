@@ -213,7 +213,10 @@
     <div class="container text-center">
       <div class="row justify-content-around mb-5">
         <%for(let dorm of dorms) {%>
-        <div class="col-md-4 align-items-center" style="width: 22rem">
+        <div
+          class="col-md-4 align-items-center justify-content-center mb-5"
+          style="width: 22rem"
+        >
           <div class="card shadow" style="border: 2px solid #ceb888">
             <a href="/<%=dorm._id%> "
               ><img src=" <%=dorm.image[0]%>  " class="card-img-top" alt="..."
