@@ -213,32 +213,34 @@
     <div class="container text-center">
       <div class="row justify-content-around mb-5">
         <%for(let dorm of dorms) {%>
-
-        <div
-          class="card col-md-4 align-items-center p-4 gy-5 shadow"
-          style="width: 22rem; border: 2px solid #ceb888"
-        >
-          <a href="/<%=dorm._id%> "
-            ><img src=" <%=dorm.image[0]%>  " class="card-img-top" alt="..."
-          /></a>
-          <div class="card-body">
-            <h2 class="card-title"><%=dorm.name %></h2>
-            <h3 class="card-text" style="color: #782f40">
-              <%=dorm.overallRating %> / 5
-            </h3>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Location: <%=dorm.location%></li>
-            <li class="list-group-item">Residents: <%=dorm.capacity%></li>
-            <li class="list-group-item">Built: <%=dorm.year%></li>
-            <li class="list-group-item">Floors: <%=dorm.floors%></li>
-          </ul>
-          <div class="card-body">
-            <a href="/<%=dorm._id%>" class="card-link btn btn-gold"
-              >Explore <%=dorm.name%>
-            </a>
+        <div class="col-md-4">
+          <div
+            class="card align-items-center p-4 gy-5 shadow"
+            style="width: 22rem; border: 2px solid #ceb888"
+          >
+            <a href="/<%=dorm._id%> "
+              ><img src=" <%=dorm.image[0]%>  " class="card-img-top" alt="..."
+            /></a>
+            <div class="card-body">
+              <h2 class="card-title"><%=dorm.name %></h2>
+              <h3 class="card-text" style="color: #782f40">
+                <%=dorm.overallRating %> / 5
+              </h3>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Location: <%=dorm.location%></li>
+              <li class="list-group-item">Residents: <%=dorm.capacity%></li>
+              <li class="list-group-item">Built: <%=dorm.year%></li>
+              <li class="list-group-item">Floors: <%=dorm.floors%></li>
+            </ul>
+            <div class="card-body">
+              <a href="/<%=dorm._id%>" class="card-link btn btn-gold"
+                >Explore <%=dorm.name%>
+              </a>
+            </div>
           </div>
         </div>
+
         <% } %>
       </div>
     </div>
